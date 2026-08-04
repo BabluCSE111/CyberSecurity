@@ -688,3 +688,162 @@ RSA Private Key
 ✔ Modular Multiplicative Inverse
 
 ✔ RSA Application
+# CSE403 – Session Notes
+
+## Topic: Security Services, Security Mechanisms, Threats, Vulnerabilities, Risks & Attacks
+
+---
+
+# 1. Security Service
+
+**Definition:**
+A Security Service is the **goal** we want to achieve to protect information and systems.
+
+### Types of Security Services
+
+### Confidentiality
+
+* Prevents unauthorized access to data.
+* Goal: Only authorized users can read the information.
+* Example: Online banking data protected by encryption.
+
+### Integrity
+
+* Prevents unauthorized modification of data.
+* Goal: Data remains accurate and unchanged.
+* Example: Transaction amount should not be altered.
+
+### Authentication
+
+* Verifies the identity of a user or system.
+* Goal: Ensure the user is genuine.
+* Example: Username + Password + OTP.
+
+### Availability
+
+* Ensures services and data are available when needed.
+* Goal: Users can access the system anytime.
+* Example: Banking server should remain online.
+
+---
+
+# 2. Security Mechanism
+
+**Definition:**
+A Security Mechanism is the **tool or technique** used to provide a Security Service.
+
+### Examples
+
+| Security Service | Security Mechanism                       |
+| ---------------- | ---------------------------------------- |
+| Confidentiality  | Encryption                               |
+| Integrity        | Hashing, Digital Signature               |
+| Authentication   | Password, OTP, Biometrics                |
+| Availability     | Backup Server, Redundancy, Load Balancer |
+
+---
+
+# Difference
+
+**Security Service = What we want (Goal)**
+
+**Security Mechanism = How we achieve it (Tool)**
+
+---
+
+# 3. Vulnerability
+
+**Definition:**
+A Vulnerability is a weakness or security flaw that can be exploited.
+
+### Examples
+
+* Weak password
+* No antivirus
+* Outdated software
+* Open network port
+* No lock on a library door
+
+---
+
+# 4. Threat
+
+**Definition:**
+A Threat is any person, event, or software capable of exploiting a vulnerability and causing harm.
+
+### Examples
+
+* Hacker
+* Virus
+* Ransomware
+* Insider
+* Fire
+* Flood
+
+---
+
+# 5. Attack
+
+**Definition:**
+An Attack is the actual attempt to exploit a vulnerability.
+
+### Examples
+
+* Password cracking
+* Malware infection
+* Data theft
+* SQL Injection
+* Phishing
+
+---
+
+# 6. Risk
+
+**Definition:**
+Risk is the possibility of loss or damage if a threat successfully exploits a vulnerability.
+
+### Examples
+
+* Financial loss
+* Data loss
+* Reputation damage
+* Service disruption
+
+---
+
+# Library Analogy
+
+No Lock
+↓
+**Vulnerability**
+
+Unauthorized Person
+↓
+**Threat**
+
+Steals Books
+↓
+**Attack**
+
+Books Missing
+↓
+**Risk**
+
+---
+
+# Memory Trick
+
+* **Vulnerability = Weakness**
+* **Threat = Danger**
+* **Attack = Action**
+* **Risk = Loss / Damage**
+
+---
+
+# Key Takeaway
+
+**Security Service = Goal**
+
+**Security Mechanism = Tool**
+
+**Weakness + Threat → Attack → Risk**
