@@ -847,3 +847,386 @@ Books Missing
 **Security Mechanism = Tool**
 
 **Weakness + Threat → Attack → Risk**
+# CSE403 – Cryptography and Network Security
+## Module 1: Classical Ciphers
+
+---
+
+# Learning Objectives
+
+After completing this section, you should be able to:
+
+- Understand different classical ciphers.
+- Perform encryption and decryption.
+- Understand substitution and transposition concepts.
+- Apply mathematical formulas in classical ciphers.
+- Identify the cipher from its working method.
+
+---
+
+# 1. Caesar / Additive Cipher
+
+## Definition
+
+Caesar Cipher shifts each plaintext letter by a fixed key.
+
+### Encryption
+
+```text
+C = (P + k) mod 26
+```
+
+### Decryption
+
+```text
+P = (C - k) mod 26
+```
+
+### Key Idea
+
+```text
+Fixed Shift
+```
+
+---
+
+# 2. Multiplicative Cipher
+
+## Definition
+
+Each plaintext value is multiplied by a key.
+
+### Encryption
+
+```text
+C = (P × k) mod 26
+```
+
+### Condition
+
+```text
+gcd(k,26) = 1
+```
+
+The key must have a modular inverse.
+
+### Decryption
+
+```text
+P = (C × k⁻¹) mod 26
+```
+
+### Key Idea
+
+```text
+Multiplication
+```
+
+---
+
+# 3. Affine Cipher
+
+## Definition
+
+Affine Cipher combines multiplication and addition.
+
+### Encryption
+
+```text
+C = (aP + b) mod 26
+```
+
+### Condition
+
+```text
+gcd(a,26) = 1
+```
+
+### Decryption
+
+```text
+P = a⁻¹(C - b) mod 26
+```
+
+### Key Idea
+
+```text
+Multiply + Add
+```
+
+---
+
+# 4. Monoalphabetic Cipher
+
+## Definition
+
+Uses one fixed substitution alphabet.
+
+### Example
+
+```text
+Plain :  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Cipher:  QWERTYUIOPASDFGHJKLZXCVBNM
+```
+
+### Key Idea
+
+```text
+One Fixed Substitution
+```
+
+### Weakness
+
+```text
+Frequency Analysis
+```
+
+---
+
+# 5. Polyalphabetic / Vigenère Cipher
+
+## Definition
+
+Uses multiple substitution alphabets controlled by a key.
+
+### Encryption
+
+```text
+Cᵢ = (Pᵢ + Kᵢ) mod 26
+```
+
+### Example
+
+```text
+Plaintext : ATTACKATDAWN
+Key       : LEMONLEMONLE
+```
+
+### Key Idea
+
+```text
+Multiple Alphabets
++
+Repeating Key
+```
+
+### Important
+
+The same plaintext letter can produce different ciphertext letters.
+
+---
+
+# 6. Playfair Cipher
+
+## Definition
+
+Encrypts two letters at a time using a 5×5 matrix.
+
+### Rules
+
+### Same Row
+
+```text
+Move Right →
+```
+
+### Same Column
+
+```text
+Move Down ↓
+```
+
+### Rectangle
+
+```text
+Swap Columns
+```
+
+### Key Idea
+
+```text
+Letter Pairs + 5×5 Matrix
+```
+
+---
+
+# 7. Hill Cipher
+
+## Definition
+
+Uses matrix multiplication for encryption.
+
+### Letter Mapping
+
+```text
+A=0, B=1, ..., Z=25
+```
+
+### Encryption
+
+```text
+C = KP mod 26
+```
+
+### Decryption
+
+```text
+P = K⁻¹C mod 26
+```
+
+### Key Idea
+
+```text
+Matrix Multiplication
+```
+
+### Important
+
+The key matrix must have a valid modular inverse.
+
+---
+
+# 8. One-Time Pad (OTP)
+
+## Definition
+
+Uses a truly random key.
+
+### Conditions
+
+- Key length = Plaintext length
+- Key used only once
+- Key must be random
+
+### Encryption
+
+```text
+C = P ⊕ K
+```
+
+or
+
+```text
+C = (P + K) mod 26
+```
+
+### Key Idea
+
+```text
+Random Key
++
+Same Length
++
+Used Once
+```
+
+### Security
+
+```text
+Perfect Secrecy
+```
+
+---
+
+# 9. Autokey Cipher
+
+## Definition
+
+Uses a keyword and extends the key using plaintext.
+
+### Encryption
+
+```text
+Cᵢ = (Pᵢ + Kᵢ) mod 26
+```
+
+### Key Idea
+
+```text
+Keyword + Plaintext
+```
+
+### Difference from Vigenère
+
+```text
+Vigenère → Repeating Key
+Autokey  → Key + Plaintext
+```
+
+---
+
+# Cipher Comparison
+
+| Cipher | Main Method |
+|----------|-------------|
+| Caesar | Fixed Shift |
+| Multiplicative | Multiplication |
+| Affine | Multiplication + Addition |
+| Monoalphabetic | Fixed Substitution |
+| Vigenère | Multiple Alphabets |
+| Playfair | Letter Pairs |
+| Hill | Matrix Multiplication |
+| OTP | Random One-Time Key |
+| Autokey | Keyword + Plaintext |
+
+---
+
+# Important Exam Notes
+
+- Caesar uses a fixed shift.
+- Multiplicative uses modular multiplication.
+- Affine combines multiplication and addition.
+- Monoalphabetic uses one substitution alphabet.
+- Polyalphabetic uses multiple substitution alphabets.
+- Playfair encrypts pairs of letters.
+- Hill cipher uses matrix multiplication.
+- OTP uses a random key equal to plaintext length and uses it only once.
+- Autokey extends the key using plaintext.
+
+---
+
+# Concept Flow
+
+```text
+Classical Ciphers
+       ↓
+Caesar
+       ↓
+Multiplicative
+       ↓
+Affine
+       ↓
+Monoalphabetic
+       ↓
+Polyalphabetic
+       ↓
+Playfair
+       ↓
+Hill
+       ↓
+OTP
+       ↓
+Autokey
+```
+
+---
+
+# Session Summary
+
+✔ Caesar / Additive Cipher
+
+✔ Multiplicative Cipher
+
+✔ Affine Cipher
+
+✔ Monoalphabetic Cipher
+
+✔ Polyalphabetic / Vigenère Cipher
+
+✔ Playfair Cipher
+
+✔ Hill Cipher
+
+✔ One-Time Pad (OTP)
+
+✔ Autokey Cipher
